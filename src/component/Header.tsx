@@ -5,7 +5,7 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="" id="hero">
+    <header className="" id="home">
       <div className="pt-13 sm:pt-14  relative h-screen md:h-screen overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = () => {
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <a
               href="#calculator"
-              className=" group flex items-center justify-center px-6 py-3 text-sm font-semibold sm:px-7 sm:py-3 sm:text-base md:px-8 md:py-3 md:text-lg rounded-lg shadow-xl bg-amber-900 text-gray-100 hover:bg-amber-800 transition duration-300"
+              className=" group flex items-center justify-center px-6 py-3 text-sm font-semibold sm:px-7 sm:py-3 sm:text-base md:px-8 md:py-3 md:text-lg rounded-lg shadow-xl bg-[#5c3324] text-gray-100 hover:bg-[#653a2a] transition duration-300"
               aria-label="Cek Dampak Lingkungan Anda"
             >
               Hitung Dampak Lingkungan
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = () => {
 
             <a
               href="#craft-gallery"
-              className="flex items-center justify-center px-6 py-3 text-sm font-semibold sm:px-7 sm:py-3 sm:text-base md:px-8 md:py-3 md:text-lg rounded-lg shadow-lg bg-black/10 text-gray-200 hover:bg-amber-900 hover:text-gray-100 transition duration-300 backdrop-blur-sm"
+              className="flex items-center justify-center px-6 py-3 text-sm font-semibold sm:px-7 sm:py-3 sm:text-base md:px-8 md:py-3 md:text-lg rounded-lg shadow-lg bg-black/10 text-gray-200 hover:bg-[#5c3324] hover:text-gray-100 transition duration-300 backdrop-blur-sm"
               aria-label="Lihat Kerajinan Eco-Friendly"
             >
               <Leaf className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />

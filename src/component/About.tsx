@@ -2,11 +2,11 @@ import { ArrowRight } from "lucide-react";
 const About = () => {
   return (
     <>
-      <section className="w-full bg-gray-50 py-10">
-        <div className="max-w-7xl container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center px-6 md:px-10">
+      <section className="w-full bg-gray-50 py-10" id="about">
+        <div className="max-w-7xl container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center px-5 sm:px-8 lg:px-10 xl:px-12">
           <div className="lg:col-span-6 space-y-6 md:space-y-8 order-2 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-stone-900 text-center lg:text-left">
-              <span className="font-extrabold font-['Poppins']  ">
+              <span className="font-extrabold font-['Poppins'] text-[#5c3324] ">
                 Tentang Kami
               </span>
             </h1>
@@ -19,7 +19,7 @@ const About = () => {
             </p>
 
             <div className="mt-6 flex justify-center lg:justify-start">
-              <button className="inline-flex items-center justify-center px-10 py-3.5 bg-amber-900 text-white rounded-full text-base font-bold shadow-lg shadow-amber-900/30 hover:bg-amber-800 transition-all duration-300 transform hover:scale-[1.02]">
+              <button className="inline-flex items-center justify-center px-10 py-3.5 bg-[#5c3324] text-white rounded-full text-base font-bold shadow-lg shadow-amber-900/30 hover:bg-[#653a2a] transition-all duration-300 transform hover:scale-[1.02]">
                 Jelajahi Sekarang <ArrowRight className="w-5 h-5 ml-2" />
               </button>
             </div>

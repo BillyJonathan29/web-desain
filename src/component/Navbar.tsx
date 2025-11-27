@@ -1,61 +1,89 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Search } from "lucide-react";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = document.getElementById("hero")?.offsetHeight || 0;
+      setScrolled(window.scrollY > heroHeight - 80);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const navItems = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Project", href: "#project" },
-    { name: "Galeri", href: "#galeri" },
-    { name: "Testimonials", href: "#" },
-    { name: "Card", href: "#card" },
+    { name: "Inovasi", href: "#inovasi" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Galleri", href: "#gallery" },
+    { name: "Products", href: "#products" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-transparent backdrop-blur-sm z-50 py-4">
-      <div className="container mx-auto px-4 sm:px-8 flex items-center justify-between">
-        <h1 className="text-white font-bold text-2xl md:text-2xl xl:text-3xl whitespace-nowrap">
-          Saung Kharisma Alam
-        </h1>
-        <div className="hidden lg:flex items-center lg:text-sm xl:text-base lg:space-x-6 xl:space-x-8">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 
+      ${scrolled ? "bg-white shadow-md" : "bg-transparent backdrop-blur-xs"}`}
+      id="navbar"
+    >
+      <div className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 py-4 flex items-center justify-between">
+        {/* LOGO */}
+        <div className="flex items-center space-x-3">
+          <img
+            src="img/logo.png"
+            alt="Logo Saung Kharisma Alam"
+            className="w-10 h-10 object-contain" // sesuaikan ukuran logo
+          />
+          <h1
+            className={`font-bold text-2xl md:text-2xl xl:text-3xl whitespace-nowrap transition-colors duration-500
+      ${scrolled ? "text-[#5c3324]" : "text-white"}`}
+          >
+            Saung Kharisma Alam
+          </h1>
+        </div>
+
+        {/* DESKTOP NAV */}
+        <div className="hidden lg:flex items-center lg:text-sm xl:text-base lg:space-x-4 xl:space-x-8">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-white  tracking-wider hover:text-amber-700 transition"
+              className={`tracking-wide font-medium hover:text-amber-900 transition-colors duration-300
+                ${scrolled ? "text-[#5c3324]" : "text-gray-100"}
+              `}
             >
               {item.name}
             </a>
           ))}
 
           {/* SEARCH DESKTOP */}
-          <div className="relative ml-4">
+          <div className="relative w-48 ml-2">
             <input
               type="text"
               placeholder="Search..."
-              className="bg-transparent border border-gray-200 text-white placeholder-gray-300 py-2 px-4 pr-10 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-200"
+              className={`w-full py-2 pl-4 pr-10 rounded-full border transition-colors duration-300
+                ${
+                  scrolled
+                    ? "bg-white border-[#5c3324] text-[#5c3324] placeholder-[#5c3324]"
+                    : "bg-transparent border-gray-300 text-white placeholder-gray-200"
+                }
+                focus:outline-none focus:ring-1 focus:ring-amber-700`}
             />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 text-white absolute right-3 top-1/2 -translate-y-1/2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            <Search
+              size={18}
+              className={`absolute right-3 top-1/2 -translate-y-1/2 transition-colors duration-300
+                ${scrolled ? "text-[#5c3324]" : "text-white"}`}
+            />
           </div>
         </div>
+
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="lg:hidden text-white focus:outline-none"
+          className={`lg:hidden transition-colors duration-300 
+            ${scrolled ? "text-[#5c3324]" : "text-white"}`}
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -63,9 +91,9 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? "max-h-screen py-4" : "max-h-0"
-        }  backdrop-blur-sm`}
+        className={`lg:hidden overflow-hidden transition-all duration-500 
+        ${isMenuOpen ? "max-h-screen py-4" : "max-h-0"}
+        ${scrolled ? "bg-white shadow-md" : "backdrop-blur-md"}`}
       >
         <div className="flex flex-col space-y-3 px-6">
           {navItems.map((item) => (
@@ -73,33 +101,31 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-white text-center py-2 font-medium hover:text-amber-700 transition"
+              className={`text-center py-2 font-medium hover:text-amber-900 transition
+                ${scrolled ? "text-[#5c3324]" : "text-white"}`}
             >
               {item.name}
             </a>
           ))}
 
           {/* SEARCH MOBILE */}
-          <div className="relative pt-2 pb-3 mx-auto">
+          <div className="relative mt-3">
             <input
               type="text"
               placeholder="Search..."
-              className="w-full  bg-transparent border border-gray-300 text-white placeholder-gray-300 py-2 px-4 pr-10 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-200"
+              className={`w-full py-2 pl-4 pr-10 rounded-full border transition-colors duration-300
+                ${
+                  scrolled
+                    ? "bg-white border-[#5c3324] text-[#5c3324] placeholder-[#5c3324]"
+                    : "bg-transparent border-gray-300 text-white placeholder-gray-200"
+                }
+                focus:outline-none focus:ring-1 focus:ring-amber-700`}
             />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 text-white absolute right-3 top-1/2 -translate-y-1/2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            <Search
+              size={18}
+              className={`absolute right-3 top-1/2 -translate-y-1/2 transition-colors duration-300
+                ${scrolled ? "text-[#5c3324]" : "text-white"}`}
+            />
           </div>
         </div>
       </div>

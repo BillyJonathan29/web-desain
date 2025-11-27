@@ -33,17 +33,17 @@ const ClimateActionPage: React.FC = () => {
   }, []);
 
   return (
-    <section className="my-10 py-16 px-7 md:px-20 overflow-hidden">
-      <div className="container mx-auto">
+    <section className="my-10 py-16 overflow-hidden" id="inovasi">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24">
           <div className="inline-block mb-6">
-            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-amber-900">
+            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#6e4230] ">
               Daur Kayu Berkelanjutan
             </h2>
-            <div className="h-0.5 bg-amber-800 rounded-full w-full mt-1"></div>
+            <div className="h-0.5 bg-[#774936] rounded-full w-full mt-1"></div>
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-['Poppins'] font-extrabold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-['Poppins'] font-extrabold text-[#5c3324] mb-6 leading-tight">
             Inovasi EcoWood Hub
           </h1>
           <p className="text-base md:text-lg font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed ">
@@ -81,7 +81,7 @@ const ClimateActionPage: React.FC = () => {
               data-aos={index % 2 === 0 ? "slide-left" : "slide-right"}
               data-aos-duration="2000"
             >
-              <p className="font-bold font-['Poppins'] text-3xl text-gray-900">
+              <p className="font-bold font-['Poppins'] text-3xl text-[#5c3324]">
                 {item.title}
               </p>
 
@@ -90,11 +90,11 @@ const ClimateActionPage: React.FC = () => {
               </p>
 
               <div className="inline-flex items-center gap-3 cursor-pointer group transition-all duration-200">
-                <span className="h-8 w-0.5 bg-amber-800 rounded-full"></span>
-                <p className="text-amber-800 font-semibold text-base">
+                <span className="h-8 w-0.5 bg-[#6e4230] rounded-full"></span>
+                <p className="text-[#774936] font-semibold text-base">
                   Read More
                 </p>
-                <ArrowRight className="text-amber-800 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                <ArrowRight className="text-[#774936] h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
               </div>
             </div>
           </div>
