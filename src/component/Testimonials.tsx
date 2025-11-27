@@ -40,24 +40,24 @@ const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-gray-50 px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-20 bg-amber-900 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="text-center mb-16 md:mb-24">
           {/* SUBTITLE */}
           <div className="inline-block mb-6">
-            <h2 className="text-lg md:text-xl font-bold uppercase tracking-[0.3em] text-amber-800">
+            <h2 className="text-lg md:text-xl font-bold uppercase tracking-[0.3em] text-gray-100">
               Suara Pengguna
             </h2>
-            <div className="h-0.5 bg-amber-800 rounded-full w-full mt-1"></div>
+            <div className="h-0.5 bg-white rounded-full w-full mt-1"></div>
           </div>
 
           {/* TITLE */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Poppins'] font-extrabold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Poppins'] font-extrabold text-gray-200 mb-6 leading-tight">
             Testimonial EcoWood Hub
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="text-md md:text-xl font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-md md:text-xl font-serif italic text-gray-300 max-w-2xl mx-auto leading-relaxed">
             "Kesan dan pengalaman dari pelanggan yang telah merasakan produk
             daur ulang kayu EcoWood yang ramah lingkungan dan penuh nilai."
           </p>
@@ -67,7 +67,7 @@ const Testimonials: React.FC = () => {
           {testimonials.map((item, index) => (
             <div key={index} className="relative" data-aos="fade-up">
               {/* Card */}
-              <div className="bg-white shadow-xl p-8 rounded-xl relative">
+              <div className="bg-[#F7EEDB] shadow-xl p-8 rounded-xl relative">
                 {/* Stars */}
                 <div className="flex text-yellow-400 mb-4 text-xl">
                   {"★★★★★"}

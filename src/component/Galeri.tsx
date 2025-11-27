@@ -154,7 +154,7 @@ const GalleryCard: React.FC<{
         loading="lazy"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
         <h4 className="text-2xl font-['Poppins'] font-semibold text-white group-hover:text-white transition-colors">
           {item.title}
         </h4>
@@ -216,7 +216,7 @@ const Galeri: React.FC = () => {
         >
           <div className="text-center mb-16 md:mb-24">
             <div className="inline-block mb-6">
-              <h2 className="text-lg font-bold uppercase tracking-[0.3em] text-amber-800">
+              <h2 className="text-lg font-bold uppercase tracking-[0.3em] text-amber-900">
                 Koleksi Kerajinan Kayu
               </h2>
               <div className="h-0.5 bg-amber-800 rounded-full w-full mt-1"></div>
