@@ -1,11 +1,12 @@
-// src/ClimateActionPage.tsx
+// Updated ClimateActionPage.tsx
+// Clean, responsive, consistent colors & breakpoints
 
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ArrowRight } from "lucide-react";
 
-const gallerItems = [
+const galleryItems = [
   {
     id: 1,
     src: "img/satu.jpeg",
@@ -32,187 +33,74 @@ const ClimateActionPage: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <section
-        className="my-10 py-16 md:px-20 px-10 overflow-x-hidden"
-        id="sejarah"
-      >
-        <div className="container mx-auto">
-          <div className="text-center mb-16 md:mb-24">
-            <div className="inline-block mb-6">
-              <h2 className="text-lg font-bold uppercase tracking-[0.3em] text-amber-800">
-               Daur Kayu Berkelanjutan
-              </h2>
-              <div className="h-0.5 bg-amber-800 rounded-full w-full mt-1"></div>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Poppins'] font-extrabold text-gray-900 mb-6 leading-tight">
-              Inovasi EcoWood Hub
-            </h1>
-            <p className="text-md md:text-xl font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed ">
-              "Kami mengubah sisa kayu menjadi produk kreatif dan berkelanjutan
-              melalui proses yang aman, ramah lingkungan, dan mendukung UMKM
-              lokal."
-            </p>
+    <section className="my-10 py-16 px-7 md:px-20 overflow-hidden">
+      <div className="container mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 md:mb-24">
+          <div className="inline-block mb-6">
+            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-amber-900">
+              Daur Kayu Berkelanjutan
+            </h2>
+            <div className="h-0.5 bg-amber-800 rounded-full w-full mt-1"></div>
           </div>
-
-          <div
-            className="flex md:flex-row flex-col rounded-lg md:gap-10 gap-0 justify-between items-center w-full my-20"
-            data-aos="fade"
-          >
-            <div
-              className="w-full"
-              data-aos="slide-right"
-              data-aos-duration="2000"
-            >
-              <img
-                src={gallerItems[0].src}
-                alt={gallerItems[0].title}
-                className="rounded-xl shadow-lg hover:scale-[1.02] hover:-rotate-2 transition-all duration-200"
-              />
-            </div>
-
-            <div
-              className="w-full my-5 flex flex-col gap-10"
-              data-aos="slide-left"
-              data-aos-duration="2000"
-            >
-              <p className="font-bold font-['Poppins'] text-3xl">
-                {gallerItems[0].title}
-              </p>
-              <p className="font-sans text-lg text-gray-700 leading-relaxed">
-                {gallerItems[0].desc}
-              </p>
-
-              <div
-                data-aos="slide-left"
-                data-aos-duration="3000"
-                className="inline-flex items-center gap-3 rounded-lg cursor-pointer group 
-                 transition-all duration-200"
-              >
-                {/* Garis kiri */}
-                <span className="h-8 w-0.5 bg-amber-800 rounded-full"></span>
-
-                {/* Text */}
-                <p className="text-amber-800 font-semibold text-sm sm:text-base">
-                  Read More
-                </p>
-
-                {/* Icon */}
-                <ArrowRight className="text-amber-800 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="flex md:flex-row flex-col rounded-lg md:gap-10 gap-0 justify-between items-center w-full my-20 text-secondary"
-            data-aos="fade"
-          >
-            <div
-              className="w-full block md:hidden"
-              data-aos="slide-right"
-              data-aos-duration="2000"
-            >
-              <img
-                src={gallerItems[1].src}
-                alt={gallerItems[1].title}
-                className="rounded-xl shadow-lg hover:scale-[1.02] hover:-rotate-2 transition-all duration-200"
-              />
-            </div>
-
-            <div
-              className="w-full my-5 flex flex-col gap-10"
-              data-aos="slide-left"
-              data-aos-duration="2000"
-            >
-              <p className="font-bold font-['Poppins']  text-3xl">
-                {gallerItems[1].title}
-              </p>
-              <p className="font-sans text-lg text-gray-700 leading-relaxed">
-                {gallerItems[1].desc}
-              </p>
-
-              <div
-                data-aos="slide-left"
-                data-aos-duration="1500"
-                className="inline-flex items-center gap-3 rounded-lg cursor-pointer group 
-                 transition-all duration-200"
-              >
-                {/* Garis kiri */}
-                <span className="h-8 w-0.5 bg-amber-800 rounded-full"></span>
-
-                {/* Text */}
-                <p className="text-amber-800 font-semibold text-sm sm:text-base">
-                  Read More
-                </p>
-
-                {/* Icon */}
-                <ArrowRight className="text-amber-800 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
-              </div>
-            </div>
-
-            <div
-              className="w-full hidden md:block"
-              data-aos="slide-right"
-              data-aos-duration="2000"
-            >
-              <img
-                src={gallerItems[1].src}
-                alt={gallerItems[1].title}
-                className="rounded-xl shadow-lg hover:scale-[1.02] hover:rotate-2 transition-all duration-200"
-              />
-            </div>
-          </div>
-
-          <div
-            className="flex md:flex-row flex-col rounded-lg md:gap-10 gap-0 justify-between items-center w-full mt-20"
-            data-aos="fade"
-          >
-            <div
-              className="w-full"
-              data-aos="slide-right"
-              data-aos-duration="2000"
-            >
-              <img
-                src={gallerItems[2].src}
-                alt={gallerItems[2].title}
-                className="w-full h-full object-cover rounded-xl shadow-lg hover:scale-[1.05] hover:-rotate-2 transition-all duration-200"
-              />
-            </div>
-
-            <div
-              className="w-full my-5 flex flex-col gap-10"
-              data-aos="slide-left"
-              data-aos-duration="2000"
-            >
-              <p className="font-bold font-['Poppins']  text-3xl">
-                {gallerItems[2].title}
-              </p>
-              <p className="font-sans text-lg text-gray-700 leading-relaxed">
-                {gallerItems[2].desc}
-              </p>
-
-              <div
-                data-aos="slide-left"
-                data-aos-duration="3000"
-                className="inline-flex items-center gap-3 rounded-lg cursor-pointer group 
-                 transition-all duration-200"
-              >
-                {/* Garis kiri */}
-                <span className="h-8 w-0.5 bg-amber-800 rounded-full"></span>
-
-                {/* Text */}
-                <p className="text-amber-800 font-semibold text-sm sm:text-base">
-                  Read More
-                </p>
-
-                {/* Icon */}
-                <ArrowRight className="text-amber-800 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
-              </div>
-            </div>
-          </div>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-['Poppins'] font-extrabold text-gray-900 mb-6 leading-tight">
+            Inovasi EcoWood Hub
+          </h1>
+          <p className="text-base md:text-lg font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed ">
+            "Kami mengubah sisa kayu menjadi produk kreatif dan berkelanjutan
+            melalui proses yang aman, ramah lingkungan, dan mendukung UMKM
+            lokal."
+          </p>
         </div>
-      </section>
-    </>
+
+        {/* Gallery Loop */}
+        {galleryItems.map((item, index) => (
+          <div
+            key={item.id}
+            className={`flex flex-col md:flex-row items-center justify-between gap-10 my-20 ${
+              index % 2 !== 0 ? "md:flex-row-reverse" : ""
+            }`}
+            data-aos="fade"
+          >
+            {/* Image */}
+            <div
+              className="w-full md:w-1/2"
+              data-aos={index % 2 === 0 ? "slide-right" : "slide-left"}
+              data-aos-duration="2000"
+            >
+              <img
+                src={item.src}
+                alt={item.title}
+                className="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-300 hover:scale-[1.04] hover:rotate-1"
+              />
+            </div>
+
+            {/* Text */}
+            <div
+              className="w-full md:w-1/2 flex flex-col gap-6"
+              data-aos={index % 2 === 0 ? "slide-left" : "slide-right"}
+              data-aos-duration="2000"
+            >
+              <p className="font-bold font-['Poppins'] text-3xl text-gray-900">
+                {item.title}
+              </p>
+
+              <p className="font-sans text-lg text-gray-700 leading-relaxed">
+                {item.desc}
+              </p>
+
+              <div className="inline-flex items-center gap-3 cursor-pointer group transition-all duration-200">
+                <span className="h-8 w-0.5 bg-amber-800 rounded-full"></span>
+                <p className="text-amber-800 font-semibold text-base">
+                  Read More
+                </p>
+                <ArrowRight className="text-amber-800 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

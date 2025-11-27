@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 const About = () => {
   return (
     <>
-      <section className="w-full bg-stone-50 py-10">
+      <section className="w-full bg-gray-50 py-10">
         <div className="max-w-7xl container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center px-6 md:px-10">
           <div className="lg:col-span-6 space-y-6 md:space-y-8 order-2 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-stone-900 text-center lg:text-left">
