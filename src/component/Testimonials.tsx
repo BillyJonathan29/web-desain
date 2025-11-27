@@ -12,23 +12,23 @@ interface TestimonialItem {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Sebagai seseorang yang aktif dalam pelestarian budaya Sunda, saya merasa bahwa nilai-nilai lokal bukan hanya sejarah, tetapi pedoman hidup. Setiap tradisi, bahasa, dan karya seni di Jawa Barat mengajarkan kita tentang keharmonisan antara manusia dan alam. Melestarikannya adalah bentuk penghormatan atas jati diri kita sendiri.",
+      "EcoWood Hub membantu saya menampilkan proses ukiran kayu daur ulang dengan lebih profesional. Tampilan websitenya informatif dan mudah dipahami, sehingga pelanggan dapat melihat nilai dari setiap karya yang dibuat. Platform ini benar-benar mendukung pengrajin lokal untuk berkembang.",
     name: "Billy Jonathan", 
-    role: "PEMERHATI BUDAYA",
+    role: "Pengrajin Ukir Kayu",
     image: "/img/billy.jpg",
   },
   {
     quote:
-      "Sejarah Jawa Barat memberikan gambaran betapa kayanya perjalanan masyarakat Sunda dalam membangun identitasnya. Mulai dari kerajaan-kerajaan kuno hingga warisan kolonial, semuanya membentuk karakter yang kita kenal hari ini. Memahami sejarahnya adalah cara memahami akar bangsa.",
-    name: "Kevin Satria",
-    role: "PENELITI SEJARAH",
+      "EcoWood Hub memberikan ruang ideal untuk menampilkan desain eco-craft secara modern dan edukatif. Fitur galerinya sangat membantu menjelaskan konsep keberlanjutan di balik setiap produk. Website ini menjadi sarana yang tepat untuk menunjukkan kreativitas sekaligus dampak positif bagi lingkungan.",
+    name: "Dafa Faddhlurahman",
+    role: "Desainer Produk Kayu",
     image: "/img/dafa.jpg",
   },
   {
     quote:
-      "Inspirasi saya banyak datang dari seni tradisional Jawa Barat—dari ritmisnya musik, detail motif batik, hingga ekspresi Wayang Golek. Setiap karya seni mengandung filosofi mendalam dan kearifan lokal. Melalui seni, saya percaya budaya dapat hidup dan berkembang di era modern.",
+      "EcoWood Hub membantu memperkenalkan proses daur ulang kayu yang kami lakukan setiap hari kepada lebih banyak orang. Setiap tahap kerja dijelaskan dengan cara yang jelas dan mudah dipahami oleh pengunjung. Website ini membuat edukasi tentang keberlanjutan terasa lebih menarik dan informatif.",
     name: "Rifky Firmansyah",
-    role: "SENIMAN MUDA",
+    role: "Pekerja Workshop Kayu",
     image: "/img/rifky.jpg",
   },
 ];
@@ -40,24 +40,24 @@ const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-amber-900 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto">
+    <section className="w-full py-20 bg-[#6e4230]" id="testimonials">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12">
         <div className="text-center mb-16 md:mb-24">
           {/* SUBTITLE */}
           <div className="inline-block mb-6">
-            <h2 className="text-lg md:text-xl font-bold uppercase tracking-[0.3em] text-gray-100">
+            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#debea2]">
               Suara Pengguna
             </h2>
-            <div className="h-0.5 bg-white rounded-full w-full mt-1"></div>
+            <div className="h-0.5 bg-[#e5d4c3] rounded-full w-full mt-1"></div>
           </div>
 
           {/* TITLE */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Poppins'] font-extrabold text-gray-200 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Poppins'] font-extrabold text-[#d6ab7d] mb-6 leading-tight">
             Testimonial EcoWood Hub
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="text-md md:text-xl font-serif italic text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-md md:text-xl font-serif italic text-[#F7EEDB] max-w-2xl mx-auto leading-relaxed">
             "Kesan dan pengalaman dari pelanggan yang telah merasakan produk
             daur ulang kayu EcoWood yang ramah lingkungan dan penuh nilai."
           </p>
@@ -93,12 +93,12 @@ const Testimonials: React.FC = () => {
                 />
                 <div>
                   <h4
-                    className="text-[20px] font-bold text-gray-900"
+                    className="text-[20px] font-bold text-[#d6ab7d]"
                     style={{ fontFamily: "var(--font-poppins)" }}
                   >
                     {item.name}
                   </h4>
-                  <p className="text-amber-900 text-sm  font-serif italic">
+                  <p className="text-[#F7EEDB] text-sm  font-serif italic">
                     {item.role}
                   </p>
                 </div>

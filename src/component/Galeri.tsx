@@ -20,29 +20,30 @@ const galleryItems: GalleryItem[] = [
   {
     id: 2,
     src: "img/dua.jpeg",
-    title: "Ukiran Ikan Artistik",
-    desc: "Patung ikan bergaya modern dengan detail halus dan bentuk dinamis, mencerminkan harmoni antara seni dan alam.",
+
+    title: "Ukiran Figur Bersepeda",
+    desc: "Patung kayu bertema olahraga dengan garis-garis minimalis, memadukan kesederhanaan bentuk dan kreativitas ukiran.",
     aspectRatio: "aspect-[4/3]",
   },
   {
     id: 3,
     src: "img/tiga.jpeg",
-    title: "Ukiran Ornamen Abstrak",
-    desc: "Kerajinan kayu bergaya ornamental dengan pola spiral elegan, cocok sebagai dekorasi interior bernuansa alami.",
+    title: "Ukiran Ikan Artistik",
+    desc: "Patung ikan bergaya modern dengan detail halus dan bentuk dinamis, mencerminkan harmoni antara seni dan alam.",
     aspectRatio: "aspect-[3/4]",
   },
   {
     id: 4,
     src: "img/empat.jpeg",
-    title: "Ukiran Figur Bersepeda",
-    desc: "Patung kayu bertema olahraga dengan garis-garis minimalis, memadukan kesederhanaan bentuk dan kreativitas ukiran.",
+    title: "Ukiran Ikan Realistis",
+    desc: "Detail sisik dan anatomi yang presisi menjadikan ukiran ikan ini tampak hidup dan elegan, cocok sebagai pajangan premium.",
     aspectRatio: "aspect-[1/1]",
   },
   {
     id: 5,
     src: "img/lima.jpeg",
-    title: "Ukiran Ikan Realistis",
-    desc: "Detail sisik dan anatomi yang presisi menjadikan ukiran ikan ini tampak hidup dan elegan, cocok sebagai pajangan premium.",
+     title: "Ukiran Ornamen Abstrak",
+    desc: "Kerajinan kayu bergaya ornamental dengan pola spiral elegan, cocok sebagai dekorasi interior bernuansa alami.",
     aspectRatio: "aspect-[4/3]",
   },
   {
@@ -53,8 +54,6 @@ const galleryItems: GalleryItem[] = [
     aspectRatio: "aspect-[3/4]",
   },
 ];
-
-// --- Komponen Modal Popup ---
 
 interface CulturalModalProps {
   item: GalleryItem | null;
@@ -96,7 +95,7 @@ const CulturalModal: React.FC<CulturalModalProps> = ({ item, onClose }) => {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-white bg-black rounded-full w-8 h-8 flex items-center justify-center text-xl transition-all shadow-md"
+          className="absolute top-4 right-4 z-10 text-white bg-[#5c3324] rounded-full w-8 h-8 flex items-center justify-center text-xl transition-all shadow-md"
           aria-label="Close"
         >
           <X className="w-6 h-6" />
@@ -114,10 +113,10 @@ const CulturalModal: React.FC<CulturalModalProps> = ({ item, onClose }) => {
 
           <div className="md:w-2/5 p-6 md:p-8 overflow-y-auto">
             <div className="inline-block">
-              <h3 className="text-3xl font-['Poppins'] font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-['Poppins'] font-bold text-[#5c3324] mb-2">
                 {item.title}
               </h3>
-              <div className="h-1 bg-amber-800 rounded-full mb-4 w-full"></div>
+              <div className="h-1 bg-[#774936] rounded-full mb-4 w-full"></div>
             </div>
 
             {/* <p className="text-sm uppercase font-semibold text-amber-800 mb-4">
@@ -155,15 +154,13 @@ const GalleryCard: React.FC<{
       />
 
       <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-        <h4 className="text-2xl font-['Poppins'] font-semibold text-white group-hover:text-white transition-colors">
+        <h4 className="text-2xl font-['Poppins'] font-semibold text-[#F7EEDB] group-hover:text-[#F7EEDB] transition-colors">
           {item.title}
         </h4>
       </div>
     </div>
   );
 };
-
-// --- Komponen Utama Section Galeri ---
 
 const Galeri: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
@@ -206,22 +203,22 @@ const Galeri: React.FC = () => {
       `}</style>
 
       <section
-        id="cultural-gallery"
         className="py-24 md:py-36 bg-white overflow-hidden"
+         id="gallery"
       >
         <div
-          className="container mx-auto px-4 md:px-8 max-w-7xl"
+          className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 max-w-7xl"
           data-aos="zoom-in-up"
           data-aos-duration="2000"
         >
           <div className="text-center mb-16 md:mb-24">
             <div className="inline-block mb-6">
-              <h2 className="text-lg font-bold uppercase tracking-[0.3em] text-amber-900">
+              <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#6e4230]">
                 Koleksi Kerajinan Kayu
               </h2>
-              <div className="h-0.5 bg-amber-800 rounded-full w-full mt-1"></div>
+              <div className="h-0.5 bg-[#774936] rounded-full w-full mt-1"></div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Poppins'] font-extrabold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Poppins'] font-extrabold text-[#5c3324] mb-6 leading-tight">
               EcoWood Craft Gallery
             </h1>
             <p className="text-md md:text-xl  font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed ">

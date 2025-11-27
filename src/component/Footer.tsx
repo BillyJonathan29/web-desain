@@ -2,18 +2,31 @@ import { Twitter, Instagram, Github, Dribbble } from "lucide-react";
 
 const Footer = () => {
   return (
-    <>
-      <footer className="bg-amber-900 text-gray-200 px-6 sm:px-10 md:px-16 lg:px-24 py-12">
+    <footer className="bg-[#532c1e] text-gray-100  py-12" id="footer">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & Description */}
           <div>
-            <h1 className="text-xl font-semibold text-white">NUANSA JABAR</h1>
+            {/* LOGO + TITLE */}
+            <div className="flex items-center gap-3">
+              <img
+                src="img/logo.png"
+                alt="Logo Saung Kharisma Alam"
+                className="w-8 h-8 object-contain"
+              />
+              <h1 className="text-xl font-semibold text-white">
+                Saung Kharisma Alam
+              </h1>
+            </div>
+
+            {/* Garis di bawah judul */}
             <div className="w-24 h-[3px] bg-white mt-2"></div>
 
+            {/* Deskripsi */}
             <p className="mt-5 leading-relaxed">
-              Mari kita eksplorasi keindahan dan kekayaan budaya yang ada di
-              Jawa Barat. Rasakan aneka ragam makanan khasnya yang sudah
-              terkenal di seantero Indonesia.
+              EcoWood Hub mengubah limbah kayu menjadi kerajinan bernilai tinggi
+              dengan konsep kreatif dan berkelanjutan. Mendukung UMKM sekaligus
+              menjaga lingkungan.
             </p>
 
             {/* Social Icons */}
@@ -21,12 +34,9 @@ const Footer = () => {
               {[Twitter, Instagram, Github, Dribbble].map((Icon, i) => (
                 <button
                   key={i}
-                  className="p-2 bg-gray-100 rounded-full hover:bg-amber-700 transition-colors"
+                  className="p-2 bg-white/10 rounded-full hover:bg-[#5e3719] transition-colors"
                 >
-                  <Icon
-                    size={20}
-                    className="text-amber-800 group-hover:text-white"
-                  />
+                  <Icon size={20} className="text-white" />
                 </button>
               ))}
             </div>
@@ -38,11 +48,27 @@ const Footer = () => {
             <div className="w-20 h-[3px] bg-white mt-2"></div>
 
             <ul className="space-y-2 mt-4">
-              <li>About</li>
-              <li>Project</li>
-              <li>Galeri</li>
-              <li>Testimonial</li>
-              <li>Card</li>
+              <a href="#home" className="hover:text-[#db9f68]">
+                <li className="transition">Home</li>
+              </a>
+              <a href="#abour" className="hover:text-[#db9f68]">
+                {" "}
+                <li className="transition">About</li>
+              </a>
+              <a href="#inovasi" className="hover:text-[#db9f68]">
+                {" "}
+                <li className="transition">Inovasi</li>
+              </a>
+              <a href="#testimonials" className="hover:text-[#db9f68]">
+                {" "}
+                <li className="transition">Testimonial</li>
+              </a>
+              <a href="#gallery" className="hover:text-[#db9f68]">
+                <li className="transition">Galleri</li>
+              </a>
+              <a href="#products" className="hover:text-[#db9f68]">
+                <li className="transition">Product</li>
+              </a>
             </ul>
           </div>
 
@@ -66,17 +92,17 @@ const Footer = () => {
             <div className="w-20 h-[3px] bg-white mt-2"></div>
 
             <p className="mt-4">
-              Dapatkan update terbaru dan pengetahuan bermanfaat langsung ke
-              inbox.
+              Dapatkan update terbaru seputar kerajinan kayu berkelanjutan.
             </p>
 
-            <div className="mt-4 flex flex-col items-center gap-3">
+            <div className="mt-4 flex flex-col items-start gap-3 w-full">
               <input
                 type="email"
                 placeholder="Masukan Email Anda"
-                className="bg-transparent border border-white placeholder-white w-full sm:w-[250px] p-2 rounded focus:outline-none focus:ring-1 focus:ring-white"
+                className="bg-transparent border border-white placeholder-gray-200 w-full p-2 rounded focus:outline-none focus:ring-1 focus:ring-white"
               />
-              <button className="border border-white text-gray-100 px-4 py-2s rounded hover:bg-amber-700 hover:border-amber-700 transition">
+
+              <button className="border border-white text-white px-4 py-2 rounded w-full hover:bg-[#5e3719] hover:border-[#5e3719] transition">
                 Subscribe
               </button>
             </div>
@@ -84,11 +110,11 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-200 mt-10 pt-6 text-center text-sm text-white">
-          © Copyright KALKULUS TEAM | All Right Reserved 2024
+        <div className="border-t border-white/40 mt-10 pt-6 text-center text-sm text-gray-200">
+          © Copyright KALKULUS TEAM | All Rights Reserved 2024
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };
 
