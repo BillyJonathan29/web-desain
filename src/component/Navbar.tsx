@@ -58,15 +58,29 @@ const Navbar = () => {
         {/* DESKTOP NAV */}
         <div className="hidden lg:flex items-center lg:text-sm xl:text-base lg:space-x-3 xl:space-x-7">
           {navItems.map((item) => (
-            <a
+            
+            <div
               key={item.name}
-              href={item.href}
-              className={`tracking-wide font-medium hover:text-amber-900 transition-colors duration-300
-                ${scrolled ? "text-[#5c3324]" : "text-gray-100"}
-              `}
+              className="relative group" 
             >
-              {item.name}
-            </a>
+              <a
+                href={item.href}
+                className={`tracking-wide font-medium transition-colors duration-300 ${
+                  scrolled
+                    ? "text-[#5c3324] hover:text-amber-900"
+                    : "text-gray-100 hover:text-gray-300"
+                }`}
+              >
+                {item.name}
+              </a>
+
+              {/* Garis Bawah yang Dianimasikan */}
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-amber-900 transition-all duration-300 ease-in-out w-0 group-hover:w-full group-focus-within:w-full group-active:w-full ${
+                  scrolled ? "bg-amber-900" : "bg-gray-100"
+                }`}
+              ></span>
+            </div>
           ))}
 
           {/* SEARCH DESKTOP */}
@@ -107,35 +121,54 @@ const Navbar = () => {
       >
         <div className="flex flex-col space-y-3 px-6">
           {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-center py-2 font-medium hover:text-amber-900 transition
-                ${scrolled ? "text-[#5c3324]" : "text-white"}`}
-            >
-              {item.name}
-            </a>
-          ))}
-
-          {/* SEARCH MOBILE */}
-          <div className="relative mt-3">
-            <input
-              type="text"
-              placeholder="Search..."
-              className={`w-full py-2 pl-4 pr-10 rounded-full border transition-colors duration-300
-                ${
+            <div key={item.name} className="relative group">
+              <a
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`block text-center py-2 font-medium transition-colors duration-300 ${
                   scrolled
-                    ? "bg-white border-[#5c3324] text-[#5c3324] placeholder-[#5c3324]"
-                    : "bg-transparent border-gray-300 text-white placeholder-gray-200"
-                }
-                focus:outline-none focus:ring-1 focus:ring-amber-700`}
-            />
-            <Search
-              size={18}
-              className={`absolute right-3 top-1/2 -translate-y-1/2 transition-colors duration-300
-                ${scrolled ? "text-[#5c3324]" : "text-white"}`}
-            />
+                    ? "text-[#5c3324] hover:text-amber-900"
+                    : "text-white hover:text-gray-300"
+                }`}
+              >
+                {item.name}
+              </a>
+
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ease-in-out w-0 group-hover:w-full group-focus-within:w-full group-active:w-full${
+                  scrolled ? "bg-amber-900" : "bg-white"
+                }`}
+              ></span>
+            </div>
+          ))}
+        
+          <div className="relative mt-3 w-full flex justify-center">
+            <div className="relative w-full sm:w-1/2">
+              <input
+                type="text"
+                placeholder="Search..."
+                className={`
+        w-full 
+        py-2 pl-4 pr-10 
+        rounded-full border
+        transition-colors duration-300
+        ${
+          scrolled
+            ? "bg-white border-[#5c3324] text-[#5c3324] placeholder-[#5c3324]"
+            : "bg-transparent border-gray-300 text-white placeholder-gray-200"
+        }
+        focus:outline-none focus:ring-1 focus:ring-amber-700
+      `}
+              />
+              <Search
+                size={18}
+                className={`
+        absolute right-4 top-1/2 -translate-y-1/2 
+        transition-colors duration-300
+        ${scrolled ? "text-[#5c3324]" : "text-white"}
+      `}
+              />
+            </div>
           </div>
         </div>
       </div>
