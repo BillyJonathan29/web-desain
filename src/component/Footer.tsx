@@ -2,7 +2,7 @@ import { Twitter, Instagram, Github, Dribbble } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#532c1e] text-gray-100  py-12" id="footer">
+    <footer className="bg-[#532c1e] text-gray-100  py-12" id="footer"  data-aos="zoom-in-up" data-aos-duration="2000">
       <div className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & Description */}
@@ -44,14 +44,14 @@ const Footer = () => {
 
           {/* Tentang Kami */}
           <div>
-            <h3 className="text-lg font-semibold text-white">Tentang Kami</h3>
+            <h3 className="text-lg font-semibold text-white">Abot Us</h3>
             <div className="w-20 h-[3px] bg-white mt-2"></div>
 
             <ul className="space-y-2 mt-4">
               <a href="#home" className="hover:text-[#db9f68]">
                 <li className="transition">Home</li>
               </a>
-              <a href="#abour" className="hover:text-[#db9f68]">
+              <a href="#about" className="hover:text-[#db9f68]">
                 {" "}
                 <li className="transition">About</li>
               </a>

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Search } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -7,27 +9,35 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = document.getElementById("hero")?.offsetHeight || 0;
-      setScrolled(window.scrollY > heroHeight - 80);
+      setScrolled(window.scrollY > 10); // jika sudah lewat 10px baru putih
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Inovasi", href: "#inovasi" },
+    { name: "Innovation", href: "#inovasi" }, // atau #innovation jika section ikut diubah
     { name: "Testimonials", href: "#testimonials" },
-    { name: "Galleri", href: "#gallery" },
+    { name: "Gallery", href: "#gallery" },
     { name: "Products", href: "#products" },
   ];
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 
       ${scrolled ? "bg-white shadow-md" : "bg-transparent backdrop-blur-xs"}`}
       id="navbar"
+      data-aos="zoom-in-down"
+      data-aos-duration="2000"
     >
       <div className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 py-4 flex items-center justify-between">
         {/* LOGO */}
@@ -46,7 +56,7 @@ const Navbar = () => {
         </div>
 
         {/* DESKTOP NAV */}
-        <div className="hidden lg:flex items-center lg:text-sm xl:text-base lg:space-x-4 xl:space-x-8">
+        <div className="hidden lg:flex items-center lg:text-sm xl:text-base lg:space-x-3 xl:space-x-7">
           {navItems.map((item) => (
             <a
               key={item.name}

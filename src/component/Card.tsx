@@ -52,6 +52,75 @@ const items: CardItem[] = [
     description:
       "Seni ukir kayu bergaya ekspresif dengan lengkungan besar dan tekstur alami, menghadirkan sentuhan estetika modern.",
   },
+  {
+    id: 7,
+    image: "img/inv-3.jpeg",
+    title: "Daur Kayu",
+    description:
+      "Kami memulai proses dengan memilah dan membersihkan limbah kayu, memastikan setiap potongan dapat digunakan kembali sebagai bahan berkualitas untuk kerajinan eco-friendly.",
+  },
+  {
+    id: 8,
+    image: "img/inv-2.jpeg",
+    title: "Proses Kreatif",
+    description:
+      "Melalui teknik pengolahan modern, limbah kayu dipotong, dibentuk, dan dirangkai ulang menjadi produk dengan nilai estetika dan fungsi yang lebih tinggi.",
+  },
+  {
+    id: 9,
+    image: "img/inv-1.jpeg",
+    title: "Hasil Bernilai",
+    description:
+      "Tahap akhir menghasilkan produk kayu ramah lingkungan yang siap dipasarkan, mendukung keberlanjutan dan mendorong kreativitas pengrajin lokal.",
+  },
+  {
+    id: 10,
+    image: "img/delapan.jpeg",
+    title: "Proses Pengukiran Kayu",
+    description:
+      "Proses pengerjaan ukiran kayu secara manual yang menunjukkan detail penghalusan menggunakan amplas. Setiap lekukan figur kayu dibentuk dengan presisi, mencerminkan keterampilan tangan pengrajin dan keindahan karakter alami serat kayu.",
+  },
+  {
+    id: 11,
+    image: "img/tujuh.jpeg",
+    title: "Ukiran Kepala Naga",
+    description:
+      "Ukiran kayu berbentuk kepala naga bergaya artistik dengan siluet tajam dan dinamis. Karya ini memadukan nuansa tradisional dan modern, menampilkan detail kurva yang tegas serta hasil finishing mengilap yang memberikan kesan elegan dan kuat.",
+  },
+  {
+    id: 12,
+    image: "img/sembilan.jpeg",
+    title: "Furnitur Kayu Alami",
+    description:
+      "Furnitur artistik berbahan kayu utuh dengan bentuk organik alami. Kursi dan meja ini dibuat dari bonggol atau akar kayu yang dipahat minimal, menonjolkan tekstur kayu asli dan menghadirkan estetika rustic yang unik untuk dekorasi interior maupun eksterior.",
+  },
+  {
+    id: 13,
+    image: "img/sepuluh.jpeg",
+    title: "Ukiran Figur Abstrak",
+    description:
+      "Kumpulan ukiran kayu dengan figur manusia bergaya abstrak, dipadukan dengan bentuk gear industri, menonjolkan aliran kontemporer.",
+  },
+  {
+    id: 14,
+    image: "img/sebelas.jpeg",
+    title: "Ukiran Tulang Ikan",
+    description:
+      "Ukiran kayu tiga dimensi berbentuk tulang dan kerangka ikan yang artistik, memiliki sentuhan finishing mengkilap dengan dudukan kayu cokelat.",
+  },
+  {
+    id: 15,
+    image: "img/tigabelas.jpeg",
+    title: "Plakat Kuda Kayu",
+    description:"Empat patung kuda ukiran kayu dengan pose berbeda, dikemas dalam kotak pajangan kayu berlapisan beludru merah, cocok sebagai plakat atau penghargaan.",
+  },
+  {
+    id: 16,
+    image: "img/duabelas.jpeg",
+    title: "Ukiran Motif Sulur Klasik",
+    description:
+      "Patung kayu berbentuk sulur atau motif tanaman hias yang dinamis, memadukan dua warna kayu alami, berdiri di atas dudukan kayu yang simpel.",
+  },
 ];
 
 const ITEMS_PER_PAGE = 4;
@@ -76,22 +145,29 @@ const Card: React.FC = () => {
   return (
     <div className="w-full flex flex-col items-center py-10" id="products">
       <div className="container mx-auto px-2 sm:px-6 lg:px-8 xl:px-10">
-        <div className="text-center mb-16 md:mb-24">
+        <div
+          className="text-center mb-16 md:mb-24"
+          data-aos="zoom-in-down"
+          data-aos-duration="2000"
+        >
           <div className="inline-block mb-6">
-            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#6e4230] ">
-              Koleksi Produk Kayu
+            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#6e4230]">
+              Our Creations
             </h2>
             <div className="h-0.5 bg-[#774936] rounded-full w-full mt-1"></div>
           </div>
+
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-['Poppins'] font-extrabold text-[#5c3324] mb-6 leading-tight">
-            EcoWood Product Showcase
+            Koleksi Karya Kayu EcoWood
           </h1>
-          <p className="text-base md:text-lg font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed ">
-            "Menampilkan berbagai produk ukir kayu pilihan yang dibuat dengan
-            sentuhan kreatif, detail presisi, dan proses berkelanjutan dari
-            bahan limbah kayu."
+
+          <p className="text-base md:text-lg font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            “Kumpulan karya terbaik EcoWood yang dibuat dengan detail presisi,
+            sentuhan seni, dan proses berkelanjutan—mengubah limbah kayu menjadi
+            kreasi bernilai tinggi.”
           </p>
         </div>
+
         {/* Cards */}
         <div
           className="
@@ -102,6 +178,8 @@ const Card: React.FC = () => {
         lg:grid-cols-4
         w-full max-w-7xl px-4
       "
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
         >
           {paginatedItems.map((item) => (
             <div
@@ -136,7 +214,11 @@ const Card: React.FC = () => {
         </div>
 
         {/* Pagination */}
-        <div className="flex items-center justify-center gap-4 mt-10">
+        <div
+          className="flex items-center justify-center gap-4 mt-10"
+          data-aos="zoom-in-down"
+          data-aos-duration="2000"
+        >
           <button
             onClick={prevPage}
             disabled={page === 1}
