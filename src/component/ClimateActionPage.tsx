@@ -9,19 +9,19 @@ import { ArrowRight } from "lucide-react";
 const galleryItems = [
   {
     id: 1,
-    src: "img/satu.jpeg",
+    src: "img/inv-3.jpeg",
     title: "Daur Kayu",
     desc: "Kami memulai proses dengan memilah dan membersihkan limbah kayu, memastikan setiap potongan dapat digunakan kembali sebagai bahan berkualitas untuk kerajinan eco-friendly.",
   },
   {
     id: 2,
-    src: "img/dua.jpeg",
+    src: "img/inv-2.jpeg",
     title: "Proses Kreatif",
     desc: "Melalui teknik pengolahan modern, limbah kayu dipotong, dibentuk, dan dirangkai ulang menjadi produk dengan nilai estetika dan fungsi yang lebih tinggi.",
   },
   {
     id: 3,
-    src: "img/tiga.jpeg",
+    src: "img/inv-1.jpeg",
     title: "Hasil Bernilai",
     desc: "Tahap akhir menghasilkan produk kayu ramah lingkungan yang siap dipasarkan, mendukung keberlanjutan dan mendorong kreativitas pengrajin lokal.",
   },
@@ -36,10 +36,14 @@ const ClimateActionPage: React.FC = () => {
     <section className="my-10 py-16 overflow-hidden" id="inovasi">
       <div className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24">
+        <div
+          className="text-center mb-16 md:mb-24"
+          data-aos="zoom-in-down"
+          data-aos-duration="2000"
+        >
           <div className="inline-block mb-6">
             <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#6e4230] ">
-              Daur Kayu Berkelanjutan
+              Our Innovations
             </h2>
             <div className="h-0.5 bg-[#774936] rounded-full w-full mt-1"></div>
           </div>

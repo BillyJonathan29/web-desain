@@ -2,9 +2,9 @@ import { ArrowRight } from "lucide-react";
 const About = () => {
   return (
     <>
-      <section className="w-full bg-gray-50 py-10" id="about">
+      <section className="w-full bg-gray-50 py-10 overflow-x-hidden" id="about">
         <div className="max-w-7xl container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center px-5 sm:px-8 lg:px-10 xl:px-12">
-          <div className="lg:col-span-6 space-y-6 md:space-y-8 order-2 lg:order-1">
+          <div className="lg:col-span-6 space-y-6 md:space-y-8 order-2 lg:order-1" data-aos="slide-right" data-aos-duration="2000">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-stone-900 text-center lg:text-left">
               <span className="font-extrabold font-['Poppins'] text-[#5c3324] ">
                 Tentang Kami
@@ -25,7 +25,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-6 relative flex justify-center lg:justify-end mt-10 lg:mt-0 min-h-[450px] order-1 lg:order-2">
+          <div className="lg:col-span-6 relative flex justify-center lg:justify-end mt-10 lg:mt-0 min-h-[450px] order-1 lg:order-2" data-aos="slide-left" data-aos-duration="2000">
             <img
               src="img/satu.jpeg"
               alt="wood-texture-raw"

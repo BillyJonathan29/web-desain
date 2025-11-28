@@ -42,7 +42,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 5,
     src: "img/lima.jpeg",
-     title: "Ukiran Ornamen Abstrak",
+    title: "Ukiran Ornamen Abstrak",
     desc: "Kerajinan kayu bergaya ornamental dengan pola spiral elegan, cocok sebagai dekorasi interior bernuansa alami.",
     aspectRatio: "aspect-[4/3]",
   },
@@ -203,8 +203,8 @@ const Galeri: React.FC = () => {
       `}</style>
 
       <section
-        className="py-24 md:py-36 bg-white overflow-hidden"
-         id="gallery"
+        className="py-24 md:py-36 bg-gray-50 overflow-hidden"
+        id="gallery"
       >
         <div
           className="container mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 max-w-7xl"
@@ -214,12 +214,12 @@ const Galeri: React.FC = () => {
           <div className="text-center mb-16 md:mb-24">
             <div className="inline-block mb-6">
               <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#6e4230]">
-                Koleksi Kerajinan Kayu
+                Our Gallery
               </h2>
               <div className="h-0.5 bg-[#774936] rounded-full w-full mt-1"></div>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Poppins'] font-extrabold text-[#5c3324] mb-6 leading-tight">
-              EcoWood Craft Gallery
+              Galeri Kerajinan EcoWood
             </h1>
             <p className="text-md md:text-xl  font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed ">
               "Menampilkan berbagai karya ukir kayu bernilai tinggi hasil olahan
